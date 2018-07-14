@@ -1,48 +1,45 @@
-# Wnmp by DocTam
+# 与微信（WeChat）相关
 
-> 在 Windows 上运行 NGINX、MySQL 和 PHP
+> 技巧与问题解决
 
-## 使用
+## 技巧
 
-① 分别进入 `mysql`、`php`、`nginx` 目录，按照说明进行安装（Windows XP/2003 系统下最高支持版本为 `mysql-5.6.20` `php-5.4.31` `phpmyadmin-4.2.7`）
+### 被群友@时显示满屏飞舞的飞吻
 
-② 运行 `.\Bin\WebStart.Bat` 启动环境
+- 在自己的微信昵称或者群昵称中加上以下表情代码之一
 
-③ 浏览器访问 `http://localhost/`，出现 `400 Bad Request` 说明 Nignx 配置正常
-
-④ 再次访问 `http://localhost/index.php`，出现 `phpinfo` 信息说明 PHP 配置正常
-
-⑤ 访问 `http://localhost/test.php`，出现 `Connected successfully` 说明数据库配置正常（默认账号：root；默认密码：root;或空密码）
-
-⑥ 访问 `http://localhost/phpmyadmin`，出现 `phpmyadmin` 登录界面说明 phpmyadmin 配置正常
-
-⑦ 运行 `.\Bin\WebStart.Bat` 重启环境或运行 `.\Bin\WebStop.Bat` 停止环境
-
-## 更改 MySQL 账号 root 的默认密码
-
-① 报错提示：Warning: mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: YES) ；原因：密码为空密码。
-
-② 修改 my.ini 配置文件，在 [mysqld] 这个条目下加入 skip-grant-tables 后重启 mysql
-
-③ Cmd 登录 MySQL 控制台: mysql -u root -p
-
-④ mysql> use mysql;update user set password=password("新密码") where user="root";flush privileges;quit;
-
-⑤ 修改 my.ini 配置文件，在 [mysqld] 这个条目下删除 skip-grant-tables
-
-## 全局变量
-
-如果要在其他地方使用 `mysql`、`php`、`nginx`，可以将其加入环境变量
-
-打开控制面板，在搜索栏输入 `环境变量`，点击 `编辑账户的环境变量`，选中 `path`，点击`编辑`，点击`新建`，加入如下 3 条：
-
-```txt
-当前目录\mysql\版本号
-
-当前目录\php\版本号
-
-当前目录\nginx\版本号
 ```
+么么哒： จุ๊บ
+
+星星代码：ฉันคิดถึง
+
+蛋糕：สุขสันต์วันเกิด
+```
+
+## 问题解决
+
+### 问题症状：WIN10下运行最新版微信（CrashVersion=1644560715）
+
+```
+微信运行错误
+
+你的微信崩溃次数较多，建议使用最新版本，点击"确定"到官网(http://pc.weixin.qq.com/)下载最新安装包。
+
+确定 取消 
+
+```
+
+- 解决方法：
+
+  - 打开C:\Users\Administrator\AppData\Roaming\Tencent\WeChat\All Users\config\configEx.ini
+```configEx.ini
+[Update]
+NeedUpdateType=0
+CrashVersion=1644560715
+CrashCnt=5
+```
+  - 把CrashCnt=5改为小于5的数字。
+
 
 # 协议
 
