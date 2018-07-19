@@ -10,9 +10,7 @@
 
 ```
 么么哒： จุ๊บ
-
 星星代码：ฉันคิดถึง
-
 蛋糕：สุขสันต์วันเกิด
 ```
 
@@ -32,15 +30,17 @@
 - 解决方法：
 
   - 打开C:\Users\Administrator\AppData\Roaming\Tencent\WeChat\All Users\config\configEx.ini
+
 ```configEx.ini
 [Update]
 NeedUpdateType=0
 CrashVersion=1644560715
 CrashCnt=5
 ```
+
   - 把CrashCnt=5改为小于5的数字。
 
 
 # 协议
 
-[MIT](https://github.com/DocTam/Wnmp/blob/master/LICENSE)
+[MIT](https://github.com/DocTam/WeChat/blob/master/LICENSE)
